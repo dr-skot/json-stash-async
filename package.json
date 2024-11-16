@@ -22,7 +22,7 @@
   "author": "https://github.com/dr-skot",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dr-skot/json-stash/issues"
+    "url": "https://github.com/dr-skot/json-stash-async/issues"
   },
   "homepage": "https://github.com/dr-skot/json-stash-async#readme",
   "devDependencies": {

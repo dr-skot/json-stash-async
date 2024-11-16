@@ -8,7 +8,9 @@ import { getStasher } from "./stasher";
 const stasher = getStasher();
 
 export const stash = stasher.stash;
+export const stashAsync = stasher.stashAsync;
 export const unstash = stasher.unstash;
+export const unstashAsync = stasher.unstashAsync;
 export const addSerializers = stasher.addSerializers;
 export const addSerializer = stasher.addSerializer;
 export const removeSerializers = stasher.removeSerializers;

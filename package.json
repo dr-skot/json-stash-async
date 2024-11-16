@@ -1,7 +1,7 @@
 {
-  "name": "json-stash",
+  "name": "json-stash-async",
   "version": "4.0.4",
-  "description": "serialize and deserialize javascript objects to json",
+  "description": "serialize and deserialize javascript objects to json (async version)",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dr-skot/json-stash.git"
+    "url": "git+https://github.com/dr-skot/json-stash-async.git"
   },
   "author": "https://github.com/dr-skot",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/dr-skot/json-stash/issues"
   },
-  "homepage": "https://github.com/dr-skot/json-stash#readme",
+  "homepage": "https://github.com/dr-skot/json-stash-async#readme",
   "devDependencies": {
     "@types/jest": "29.5.12",
     "esserializer": "1.3.11",

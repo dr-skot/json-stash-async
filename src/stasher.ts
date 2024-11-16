@@ -4,6 +4,7 @@ import { Class } from "./types/Class";
 import { classSerializer, ClassSerializerOpts } from "./classSerializer";
 import { Serializer } from "./types/Serializer";
 import { isArray } from "./utils";
+import { stashAsync, unstashAsync } from "./stashAsync";
 
 // a stasher can `stash` and `unstash` objects, using the default serializers
 // plus any additional serializers added to with `addSerializers`
@@ -19,8 +20,16 @@ export function getStasher() {
       return stash(data, combineSerializers(serializers));
     },
 
+    stashAsync: (data: unknown, serializers?: Serializer[]) => {
+      return stashAsync(data, combineSerializers(serializers));
+    },
+
     unstash: (json: string, serializers?: Serializer[]) => {
       return unstash(json, combineSerializers(serializers));
+    },
+
+    unstashAsync: (json: string, serializers?: Serializer[]) => {
+      return unstashAsync(json, combineSerializers(serializers));
     },
 
     // TODO warn when serializers have the same key

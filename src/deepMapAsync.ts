@@ -13,14 +13,9 @@ export function deepMapAsync(
   avoidCircular = true,
 ) {
   const seen = new WeakSet();
-  let v: unknown = undefined;
-
-  const id = ++deepMapCount;
-  console.log("created deepMap", id);
 
   async function recurse(node: unknown, path: string): Promise<unknown> {
     // don't recurse infinitely on circular references
-
     if (avoidCircular && (isArray(node) || isPlainObject(node))) {
       if (seen.has(node)) return node;
       seen.add(node);
@@ -46,18 +41,13 @@ export function deepMapAsync(
       node = obj;
     }
 
-    console.log("before", { id, path, node, v });
-
     // depth-first? then do callback function after recursing
     if (depthFirst) node = await fn(node, path);
 
-    console.log("after", { id, path, node, v });
     return node;
   }
 
   return async (value: unknown) => {
-    v = value;
-    console.log("deepMap", id, v);
     return recurse(value, "");
   };
 }
